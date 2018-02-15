@@ -4,7 +4,10 @@
 	Add all your Custom Styled CSS here for New Styles or
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
-
-
-
-
+.profile-pic{
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  margin: 24px;
+  padding: 6px;
+  background:#fff
+}

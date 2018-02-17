@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+{{>head}}
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+    {{>nav}}
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+        <!-- eventually make a custom class here -->
+				<div class="section notopmargin nobottommargin" style="background: #fff;border-top:1px solid #ddd">
+					<div class="container clearfix">
+						<div class="heading-block center nomargin">
+							<h3>Inquiries</h3>
+						</div>
+					</div>
+				</div>
+
+				<div class="container clearfix">
+					<div class="row">
+
+              <table class='inquiry table table-striped border'>
+                <thead>
+                  <tr>
+                    <td class="border">name</td>
+                    <td class="border">email</td>
+                    <td class="border">subject</td>
+                    <td class="border">message</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#inquiries}}
+                  <tr>
+                    <td class='name border'>{{name}}</td>
+                    <td class='subject border'>{{email}}</td>
+                    <td class='subject border'>{{subject}}</td>
+                    <td class='subject border'>{{message}}</td>
+                  </tr>
+                  {{/inquiries}}
+                </tbody>
+              </table>
+
+
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		{{>footer}}
+
+	</div><!-- #wrapper end -->
+
+
+	<!-- External JavaScripts
+	============================================= -->
+<script type="text/javascript"src="/build/vendor.min.js"></script>
+
+</body>
+</html>

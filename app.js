@@ -5,11 +5,22 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sendgrid = require('./routes/sendgrid');
-var compression = require('compression')
+var compression = require('compression');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 require('dotenv').config();
+
+var dbUrl = 'mongodb://localhost/portfolio'
+mongoose.connect(dbUrl, function(err, res){
+  if (err){
+    console.log('DB connection failed :' + err)
+  }
+  else{
+    console.log("connected to " + res)
+  }
+})
 
 var app = express();
 

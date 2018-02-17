@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var helper = require('sendgrid').mail;
-var from_email = new helper.Email('info@thegridmedia.com');
+var from_email = new helper.Email('info@michaelmcveigh.io');
 var to_email = new helper.Email('mmcveigh33@gmail.com');
 
 /* GET home page. */

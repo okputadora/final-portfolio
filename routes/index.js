@@ -46,7 +46,7 @@ router.post('/:action', function(req, res, next){
         })
         return
       }
-      res.redirect('confirmation'))
+      res.redirect('confirmation')
     });
   }
 })

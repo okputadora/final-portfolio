@@ -2,11 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var helper = require('sendgrid').mail;
-var from_email = new helper.Email('test@example.com');
+var from_email = new helper.Email('info@thegridmedia.com');
 var to_email = new helper.Email('mmcveigh33@gmail.com');
-var subject = 'Hello World from the SendGrid Node.js Library!';
-var content = new helper.Content('text/plain', 'Hello, Email!');
-var mail = new helper.Mail(from_email, subject, to_email, content);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -28,6 +25,9 @@ router.get('/contact', function(req, res, next){
 router.post('/:action', function(req, res, next){
   var action = req.params.action
   if (action == 'contact'){
+    var subject = req.body.subject;
+    var content = new helper.Content('text/plain', req.body.message);
+    var mail = new helper.Mail(from_email, subject, to_email, content);
     var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
     var request = sg.emptyRequest({
       method: 'POST',
@@ -46,9 +46,7 @@ router.post('/:action', function(req, res, next){
         })
         return
       }
-      res.json({
-        confirmation: 'success',
-        response: response.body})
+      res.redirect('confirmation'))
     });
   }
 })

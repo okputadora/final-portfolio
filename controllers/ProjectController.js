@@ -50,5 +50,17 @@ module.exports = {
         return
       })
     })
+  },
+
+  remove: function(id){
+    return new Promise(function(resolve, reject){
+      Project.findByIdAndRemove(id, function(err){
+        if (err){
+          reject(err)
+          return
+        }
+        resolve(null)
+      })
+    })
   }
 }

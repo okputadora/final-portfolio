@@ -3,7 +3,6 @@ var router = express.Router()
 var controllers = require('../controllers')
 
 router.get('/:resource', function(req, res, next){
-  console.log("iin here")
 	var resource = req.params.resource;
 	var controller = controllers[resource]
 	if (controller == null){
@@ -51,8 +50,6 @@ router.get('/:resource/:id', function(req, res, next){
 	})
 })
 router.post('/:resource', function(req, res, next){
-  console.log("hello")
-  console.log(req.params.resource)
 	var resource = req.params.resource
 	var controller = controllers[resource]
 	if (controller == null){
@@ -91,5 +88,15 @@ router.put('/:resource/:id', function(req, res, next){
 			message: err
 		})
 	})
+})
+router.delete('/:resource/:id', function(req, res, next){
+  var controller = controllers[req.params.resource]
+  controller.remove(id)
+  .then(function(result){
+    res.json({
+      confirmation: "deleted",
+      removedItem: result
+    })
+  })
 })
 module.exports = router

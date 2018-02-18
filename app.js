@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var sendgrid = require('./routes/sendgrid');
 var compression = require('compression');
 var mongoose = require('mongoose');
 
@@ -41,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/sendgrid', sendgrid)
 app.use('/api', api)
 
 // catch 404 and forward to error handler

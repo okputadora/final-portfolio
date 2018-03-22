@@ -13,7 +13,7 @@
 
 		<!-- Content
 		============================================= -->
-		<section id="content">
+		<section id="content"  style="background: #f9f9f9">
 
 			<div class="content-wrap" style="padding: 0">
 
@@ -26,18 +26,18 @@
 					<div class="col-lg-6 center col-padding" style="background-color: #F5F5F5;">
 						<div>
 							<div class="heading-block nobottomborder nobottommargin">
-								<h3>Welcome to my Portfolio</h3>
+								<h3>Greetings!</h3>
 								<img class="profile-pic" height="150px" src="/imgs/profile.jpg" />
 							</div>
 
 							<div class="center bottommargin" style="height: 500px">
 
 								<p class="lead">
-									Greetings! My name is Michael McVeigh and I am a web developer based in Philadelphia, PA.
-									I primarily work with Node, React, and mongoDB, but also dabble in PHP, Angular, mySQL, and python.
+									My name is Michael McVeigh and I am a web developer based in Philadelphia, PA.
+									I primarily work with Node, Express, React, and mongoDB, but have also dabbled in PHP, Angular, mySQL, and python.
 								</p>
 								<p class="lead">
-									When I'm not coding, I enjoy learning new frameworks and UX principles, playing music with friends, and solving crossword puzzles.
+									When I'm not coding, I enjoy learning new frameworks, playing music with friends, and solving crossword puzzles.
 								</p>
 							</div>
 
@@ -47,7 +47,7 @@
 
 				</div>
         <!-- eventually make a custom class here -->
-				<div class="section notopmargin nobottommargin" style="background: #fff;border-top:1px solid #ddd">
+				<div class="section notopmargin nobottommargin" style="background: #f9f9f9;border-top:1px solid #ddd">
 					<div class="container clearfix">
 						<div class="heading-block center nomargin">
 							<h3>Projects</h3>
@@ -61,18 +61,18 @@
 							<div class="col-lg-3 col-md-6 bottommargin">
 								<div class="ipost clearfix">
 									<div class="entry-image">
-										<a href="#"><img class="image_fade" src="/imgs/projects/{{image}}" alt="Image"></a>
+										<a href="project/{{name}}"><img class="image_fade" src="/imgs/projects/{{image}}" alt="Image"></a>
 									</div>
 									<div class="entry-title">
-										<h3><a href="/project/jekart">{{name}}</a></h3>
+										<h3><a href="/project/">{{name}}</a></h3>
 									</div>
 									<ul class="entry-meta clearfix">
 										{{#tools}}
-										<li></i>{{.}}</li>
+										<li>{{.}}</li>
 										{{/tools}}
 									</ul>
 									<div class="entry-content">
-										<p>{{description}}</p>
+										<p>{{shortDescription}}</p>
 									</div>
 								</div>
 							</div>

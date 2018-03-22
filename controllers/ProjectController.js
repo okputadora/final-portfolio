@@ -14,6 +14,18 @@ module.exports = {
     })
   },
 
+  getByName: function(param){
+    return new Promise(function(resolve, reject){
+      Project.find(param, function(err, project){
+        if (err){
+          reject(err)
+          return
+        }
+        resolve(project)
+      })
+    })
+  },
+
   getById: function(id){
     return new Promise(function(resolve, reject){
       Project.findById(id, function(err, project){

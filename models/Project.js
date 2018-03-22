@@ -2,8 +2,11 @@ var mongoose = require('mongoose')
 
 var ProjectSchema = new mongoose.Schema({
   name: {type:String, default:''},
+  shortDescription: {type:String, default:''},
   description: {type:String, default:''},
   tools: {type:Array, default: []},
+  liveLink: {type: String},
+  codeLink: {type: String},
   image: {type:String, default:''},
   timestamp: {type:Date, default: Date.now}
 })

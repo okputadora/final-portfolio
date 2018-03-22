@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var Project = require('../models/Project')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -39,13 +39,23 @@ router.get('/:page', function(req, res, next){
 
 
 router.get('/project/:name', function(req, res, next){
-  var pages = ['jekart', 'crossword-constructor'];
   var name = req.params.name;
-  // invalid page
-  if (pages.indexOf(name) == -1){
-    res.render('error', {message: "I'm sorry, but this page simply does not exist"})
-  }
-  res.render(name, null)
+  Project.find({name: name}, null, function(err, project){
+    if (err){
+      res.render('error', {message: "I'm sorry, but this page simply does not exist"})
+      return
+    }
+    project = project[0]
+    res.render('project', {
+      name: project.name,
+      description: project.description,
+      liveLink: project.liveLink,
+      codeLink: project.codeLink,
+      image: project.image,
+      tools: project.tools
+    })
+  })
 })
+
 
 module.exports = router;

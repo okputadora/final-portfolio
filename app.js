@@ -13,7 +13,7 @@ var api = require('./routes/api');
 
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_URL, function(err, res){
+mongoose.connect(process.env.DB_URL,function(err, res){
   if (err){
     console.log('DB connection failed :' + err)
   }
